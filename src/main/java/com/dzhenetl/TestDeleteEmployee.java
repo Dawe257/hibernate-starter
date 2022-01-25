@@ -1,20 +1,20 @@
+package com.dzhenetl;
+
 import com.dzhenetl.entity.Employee;
 import com.dzhenetl.util.SessionManager;
 import org.hibernate.Session;
 
-
-public class TestUpdateEmployee {
+public class TestDeleteEmployee {
     public static void main(String[] args) {
         try (Session session = SessionManager.getSession()) {
+            Employee employee = session.get(Employee.class, 4);
             session.beginTransaction();
-            Employee employee = session.get(Employee.class, 3);
-            employee.setSalary(999);
+            session.delete(employee);
             session.getTransaction().commit();
 
+
             session.beginTransaction();
-            session.createQuery(
-                    "update Employee set salary = 1000 where name = 'Ivan'")
-                    .executeUpdate();
+            session.createQuery("delete Employee where id = 5").executeUpdate();
             session.getTransaction().commit();
         }
     }

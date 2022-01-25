@@ -1,3 +1,5 @@
+package com.dzhenetl;
+
 import com.dzhenetl.entity.Employee;
 import com.dzhenetl.util.SessionManager;
 import org.hibernate.Session;
