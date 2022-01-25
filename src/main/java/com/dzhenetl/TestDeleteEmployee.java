@@ -7,7 +7,7 @@ import org.hibernate.Session;
 public class TestDeleteEmployee {
     public static void main(String[] args) {
         try (Session session = SessionManager.getSession()) {
-            Employee employee = session.get(Employee.class, 4);
+            Employee employee = session.get(Employee.class, 2);
             session.beginTransaction();
             session.delete(employee);
             session.getTransaction().commit();

@@ -1,6 +1,5 @@
 package com.dzhenetl.util;
 
-import com.dzhenetl.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -24,10 +23,9 @@ public class SessionManager {
         }
     }
 
-    public static void buildFactory() {
+    private static void buildFactory() {
         factory = new Configuration()
                 .configure()
-                .addAnnotatedClass(Employee.class)
                 .buildSessionFactory();
     }
 

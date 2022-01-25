@@ -6,12 +6,13 @@
     <session-factory>
         <property name="connection.url">jdbc:postgresql://localhost:5432/my_db</property>
         <property name="connection.driver_class">org.postgresql.Driver</property>
-        <property name="connection.username">bestuser</property>
-        <property name="connection.password">bestuser</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">postgres</property>
         <property name="current_session_context_class">thread</property>
         <property name="dialect">org.hibernate.dialect.PostgreSQL10Dialect</property>
         <property name="show_sql">true</property>
 
-<!--        <mapping class="com.dzhenetl.entity.Employee"/>-->
+        <mapping class="com.dzhenetl.entity.Detail"/>
+        <mapping class="com.dzhenetl.entity.Employee"/>
     </session-factory>
 </hibernate-configuration>
