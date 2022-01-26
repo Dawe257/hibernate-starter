@@ -17,18 +17,20 @@ public class Employee {
     private Integer id;
     private String name;
     private String surname;
-    private String department;
     private Integer salary;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "details_id")
-    private Detail detail;
 
-    public Employee() {}
+//    @ToString.Exclude
+//    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH,
+//            CascadeType.REFRESH, CascadeType.MERGE})
+//    @JoinColumn(name = "department_id")
+//    private Department department;
 
-    public Employee(String name, String surname, String department, Integer salary) {
+    public Employee() {
+    }
+
+    public Employee(String name, String surname, Integer salary) {
         this.name = name;
         this.surname = surname;
-        this.department = department;
         this.salary = salary;
     }
 

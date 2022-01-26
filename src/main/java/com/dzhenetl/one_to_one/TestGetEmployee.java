@@ -1,4 +1,4 @@
-package com.dzhenetl;
+package com.dzhenetl.one_to_one;
 
 import com.dzhenetl.entity.Employee;
 import com.dzhenetl.util.SessionManager;

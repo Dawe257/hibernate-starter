@@ -12,6 +12,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "details")
 public class Detail {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -19,6 +20,9 @@ public class Detail {
     @Column(name = "phone_number")
     private String phoneNumber;
     private String email;
+    @ToString.Exclude
+    @OneToOne(mappedBy = "detail", cascade = CascadeType.ALL)
+    private Employee employee;
 
     public Detail() {}
 
@@ -27,4 +31,5 @@ public class Detail {
         this.phoneNumber = phoneNumber;
         this.email = email;
     }
+
 }
